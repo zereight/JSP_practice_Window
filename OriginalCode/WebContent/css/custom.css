@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+.navbar-brand, h1, h2, h3, h4 {
+
+  font-family: 'Jeju Gothic';
+
+}
+
+h5 {
+
+  font-family: 'Jeju Gothic';
+
+  font-size: 18px;
+
+}
+
+body {
+
+  font-family: 'Nanum Gothic';
+
+}
+
+
+
+출처: https://ndb796.tistory.com/36?category=986634 [안경잡이개발자]

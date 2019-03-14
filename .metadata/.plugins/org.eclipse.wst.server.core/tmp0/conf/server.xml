@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\대현\Desktop\학습\jsp_practice\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\대현\Desktop\학습\jsp_practice\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Hello World" path="/Hello_World" reloadable="true" source="org.eclipse.jst.jee.server:Hello World"/></Host>
+      <Context docBase="C:\Users\대현\Desktop\학습\jsp_practice\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\대현\Desktop\학습\jsp_practice\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Hello World" path="/Hello_World" reloadable="true" source="org.eclipse.jst.jee.server:Hello World"/><Context docBase="C:\Users\대현\Desktop\학습\jsp_practice\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Lecture Evaluation" path="/Lecture_Evaluation" reloadable="true" source="org.eclipse.jst.jee.server:Lecture Evaluation"/><Context docBase="C:\Users\대현\Desktop\학습\jsp_practice\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\OriginalCode" path="/OriginalCode" reloadable="true" source="org.eclipse.jst.jee.server:OriginalCode"/></Host>
     </Engine>
   </Service>
 </Server>
