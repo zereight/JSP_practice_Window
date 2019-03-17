@@ -1,5 +1,0 @@
-package user;
-
-public class UserDAO {
-	//DAO 는 database access object로서 실제로 DB와 정보를 교환할때 사용되는 객체이다.
-}

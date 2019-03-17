@@ -1,5 +1,0 @@
-package util;
-
-public class DatabaseUtil {
-	//db와의 연결에 사용할 함수들 정의
-}

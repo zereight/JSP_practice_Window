@@ -1,6 +1,0 @@
-package user; //user는 tutorial이라는 db에 user라는 table을 만들어주었기 때문이다.
-
-public class UserDTO {
-	//DTO 는 database transfer object의 약자로 db와 정보를 교환하기 위한 객체이다.
-
-}
