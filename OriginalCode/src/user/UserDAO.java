@@ -116,7 +116,10 @@ public class UserDAO {
 		} finally {
 			try { if(conn!=null)conn.close();} catch (Exception e) {e.printStackTrace();}
 			try { if(pstmt!=null)pstmt.close();} catch (Exception e) {e.printStackTrace();}
-			try { if(result!=null)result.close();} catch (Exception e) {e.printStackTrace();}
+			try {
+				if (result != null)
+					result.close();
+			} catch (Exception e) {e.printStackTrace();}
 		}
 		
 		return false; //db¿À·ù
