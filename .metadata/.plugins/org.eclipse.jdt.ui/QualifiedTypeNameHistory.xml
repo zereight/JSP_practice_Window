@@ -8,6 +8,8 @@
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="util.DatabaseUtil"/>
 <fullyQualifiedTypeName name="global.Global_var"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="util.DatabaseUtil"/>
 </qualifiedTypeNameHistroy>
