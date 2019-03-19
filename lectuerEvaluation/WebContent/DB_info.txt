@@ -1,0 +1,5 @@
+user의 정보는
+string userId
+string userPassword
+string userEmail
+끝인가?

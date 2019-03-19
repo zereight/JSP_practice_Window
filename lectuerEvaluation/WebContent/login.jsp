@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+
 <!doctype html>
 <html style="height:100%;">
 
@@ -11,6 +12,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/custom.css">
 
     <title>강의 평가 웹사이트</title>
 </head>
@@ -18,8 +20,8 @@
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">강의평가 웹 사이트</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="./index.jsp">강의평가 웹 사이트</a>
         <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,7 +48,7 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container mt-3">
         <form action="./index.jsp" method="get" class="form-inline">
             <select name="" id="" class="form-control">
                 <option selected value="전체">전체</option>
@@ -219,49 +221,6 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="card my-2">
-            <div class="card-body">
-                <h4 class="card-title">제목1</h4>
-                <small>교수명: <span>김대현</span></small>
-                <hr>
-                <p class="card-text py-2">내용1</p>
-                <div class="row">
-                    <div class="col-9">
-                        종합: <span>D</span>
-                        성적: <span>A</span>
-                        프리한정도: <span>B</span>
-                        강의: <span>C</span>
-                    </div>
-                    <div class="col-3 text-right">
-                        좋아요: <span>(1)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card  my-2">
-            <div class="card-body">
-                <h4 class="card-title">제목2</h4>
-                <small>교수명: <span>AI</span></small>
-                <hr>
-                <p class="card-text py-2">내용2</p>
-                <div class="row">
-                    <div class="col-9">
-                        종합: <span>D</span>
-                        성적: <span>A</span>
-                        프리한정도: <span>B</span>
-                        강의: <span>C</span>
-                    </div>
-                    <div class="col-3 text-right">
-                        좋아요: <span>(1)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-          
-    </div>
-
-
     <!-- Modal -->
     <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -306,9 +265,66 @@
         </div>
     </div>
 
-    <footer class="text-center bg-dark py-5" style="color:white; position: absolute; bottom:0; left:0; right:0;">
-        Copyright @ 김대현 All right reserved.
+
+    <div class="container" style="height: 550px;">
+
+        <div class="container-fluid p-5 border-primary bg-light mt-5" style="border-radius: 5%;">
+
+            <form action="" method="post">
+                <div class="row flex-column ">
+                    <div class="col-auto text-center ">로그인 하기</div>
+ 
+                        <div class="col form-group">
+                          <input type="text" class="form-control" name="userId" id="" aria-describedby="helpId" placeholder="아이디">
+                        </div>
+
+                    <div class="col form-group">
+
+                            <input type="text" class="form-control" name="userPassword" id="" aria-describedby="helpId" placeholder="비밀번호">
+                    </div>
+                    <div class="col" style="width:100%;">
+                        <button type="submit" class="btn btn-primary" style="width:100%;">로그인</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+
+    </div>
+
+    <footer class="footer text-center bg-dark" style="color: white;">
+        <div class="container">
+            <div class="row justify-content-between align-content-center " style="height:200px;">
+                <div class="col">
+                    <div class="mb-3" style="font-weight: 800;">위치</div>
+                    <span> 주소 XXX시 XXX구 XXX동 XXX아파트 XXX호</span>
+                </div>
+                <div class="col">
+                    <div class="mb-5" style="font-weight: 800;">SNS</div>
+                    <span>
+                        <a href="#" class="mx-3">페이스북</a>
+                        <a href="#" class="mx-3">인스타그램</a>
+                        <a href="#" class="mx-3">트위터</a>
+                    </span>
+                </div>
+                <div class="col">
+                    <div class="mb-3" style="font-weight: 800;">About</div>
+                    <span>테스트용 사이트입니다.</span>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <div class="container-fluid">
+
+        <div class="row justify-content-center align-content-center text-uppercase" style="background-color: black; height: 100px; color: white;">
+            <div class="col-auto">
+                Copyright @ 김대현 All right reserved.
+            </div>
+
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

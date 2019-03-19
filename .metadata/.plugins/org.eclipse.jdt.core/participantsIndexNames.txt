@@ -1,13 +1,5 @@
 INDEX VERSION 1.131
-C:\Users\대현\Desktop\학습\jsp_practice\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2134747887.index
-\Lecture Evaluation\src
-C:\Users\대현\Desktop\학습\jsp_practice\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\902969544.index
-\Hello World\src
-C:\Users\대현\Desktop\학습\jsp_practice\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3216986366.index
-\OriginalCode\src
-C:\Users\대현\Desktop\학습\jsp_practice\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3401916760.index
+C:\Users\대현\Desktop\학습\jsp_test\JSP_practice_Window\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1897941947.index
+\lectuerEvaluation\src
+C:\Users\대현\Desktop\학습\jsp_test\JSP_practice_Window\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3401916760.index
 \lectureEvaluation\src
-C:\Users\대현\Desktop\학습\jsp_practice\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2417420295.index
-\OriginalCode\src
-C:\Users\대현\Desktop\학습\jsp_practice\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1187514964.index
-\Lecture Evaluation\src
