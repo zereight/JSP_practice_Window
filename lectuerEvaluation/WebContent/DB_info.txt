@@ -1,5 +1,25 @@
-user의 정보는
+db정보는
+id root
+pw root
+
+db name: lectureEvaluation
+
+table
+user:
 string userId
 string userPassword
 string userEmail
-끝인가?
+string userEmailHash
+string userEmailChecked
+
+
+
+
+=============================================
+나의 DB기록
+
+mysql> create database lectureEvaluation;
+
+mysql> use lectureEvaluation;
+
+
