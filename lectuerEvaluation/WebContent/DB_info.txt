@@ -22,4 +22,16 @@ mysql> create database lectureEvaluation;
 
 mysql> use lectureEvaluation;
 
+mysql> create table USER;
+
+mysql> create table USER (
+    -> userId varchar(50) primary key,
+    -> userPassword varchar(60),
+    -> userEmail varchar(60),
+    -> userEmailHash varchar(80),
+    -> userEmailChecked boolean
+    -> );
+    
+    
+
 

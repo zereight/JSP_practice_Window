@@ -14,28 +14,40 @@
 <% 
 	request.setCharacterEncoding("UTF-8"); //form에서 post로 받는 정보들을 어떻게 포맷팅 할것이냐.
 	
-	String userId = "";
-	String userPassword = "";
-	String userEmail = "";
+
 	
-	if(request.getParameter("userId") != "") {
+	String userId =null;
+	String userPassword = null;
+	String userEmail = null;
+	
+	if(request.getParameter("userId") != null) {
 		userId = request.getParameter("userId");
 	}
-	if(request.getParameter("userPassword") != "") {
-		userId = request.getParameter("userPassword");
+	if(request.getParameter("userPassword") != null) {
+		userPassword = request.getParameter("userPassword");
 	}
-	if(request.getParameter("userEmail") != "") {
-		userId = request.getParameter("userEmail");
+	if(request.getParameter("userEmail") != null) {
+		userEmail = request.getParameter("userEmail");
 	}
 	
-	if( userId.equals("") || userPassword.equals("") || userEmail.equals("") ){
+	if( userId==(null) || userPassword==(null) || userEmail==(null) ){
+		//System.out.println(userId + " " +userPassword+ " " +userEmail);
 		PrintWriter script = response.getWriter(); //웹브라우저에 응답할 객체인 response의 getWriter인스턴스를 활용하여 웹페이지에 실제로 반응을 해보자.
 		script.println("<script>");
 		script.println("alert('입력이 안된 정보가 있습니다.');");
 		script.println("history.back();");
 		script.println("</script>");
 		script.close();
-	} else {
+	} else if( !(request.getParameter("userPassword")).equals(request.getParameter("userPasswordAgain")) ) 
+	{
+		PrintWriter script = response.getWriter(); 
+		script.println("<script>");
+		script.println("alert('비밀번호를 확인해 주세요.');");
+		script.println("history.back();");
+		script.println("</script>");
+		script.close();
+	}
+	else {
 		userDAO dao = new userDAO();
 		userDTO user = new userDTO(userId, userPassword, userEmail, SHA256.getSHA256(userEmail), false);
 		

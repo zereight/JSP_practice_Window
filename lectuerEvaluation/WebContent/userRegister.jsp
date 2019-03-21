@@ -35,9 +35,9 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">회원정보</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="#">로그인</a>
-                        <a class="dropdown-item" href="#">회원가입</a>
-                        <a class="dropdown-item" href="#">로그아웃</a>
+                        <a class="dropdown-item" href="./login.jsp">로그인</a>
+                        <a class="dropdown-item" href="./userRegister.jsp">회원가입</a>
+                        <a class="dropdown-item" href="./logout.jsp">로그아웃</a>
                     </div>
                 </li>
             </ul>
@@ -163,9 +163,9 @@
                                         <select class="form-control" name="" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
-                                            <option valiue="C">C</option>
-                                            <option valiue="D">D</option>
-                                            <option valiue="F">F</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="F">F</option>
                                         </select>
                                     </div>
                                 </div>
@@ -176,9 +176,9 @@
                                         <select class="form-control" name="" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
-                                            <option valiue="C">C</option>
-                                            <option valiue="D">D</option>
-                                            <option valiue="F">F</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="F">F</option>
                                         </select>
                                     </div>
                                 </div>
@@ -189,9 +189,9 @@
                                         <select class="form-control" name="" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
-                                            <option valiue="C">C</option>
-                                            <option valiue="D">D</option>
-                                            <option valiue="F">F</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="F">F</option>
                                         </select>
                                     </div>
                                 </div>
@@ -202,9 +202,9 @@
                                         <select class="form-control" name="" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
-                                            <option valiue="C">C</option>
-                                            <option valiue="D">D</option>
-                                            <option valiue="F">F</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="F">F</option>
                                         </select>
                                     </div>
                                 </div>
@@ -270,34 +270,41 @@
 
         <div class="container-fluid p-5 border-primary bg-light mt-5" style="border-radius: 5%;">
 
-            <form action="" method="post">
+            <form action="./userRegisterAction.jsp" method="post">
                 <div class="row flex-column ">
                     <div class="col-auto text-center ">회원가입 하기</div>
 
                     <div class="col form-group">
                             <label>이메일</label>
-                            <input type="email" class="form-control" name="" id="" aria-describedby="helpId" placeholder="이메일">
+                            <input type="email" class="form-control" name="userEmail" id="" aria-describedby="helpId" placeholder="이메일">
                         </div>
                     
                     <div class="col form-group">
                         <label>아이디</label>
-                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="아이디">
+                        <input type="text" class="form-control" name="userId" id="" aria-describedby="helpId" placeholder="아이디">
                     </div>
 
                     <div class="col form-group">
                         <label>비밀번호</label>
-                        <input type="password" class="form-control" name="" id="" aria-describedby="helpId" placeholder="비밀번호">
+                        <input type="password" class="form-control" name="userPassword" id="" aria-describedby="helpId" placeholder="비밀번호">
+                        
                     </div>
 
                     <div class="col form-group">
                         <label>비밀번호 확인</label>
-                        <input type="password" class="form-control" name="" id="" aria-describedby="helpId" placeholder="비밀번호 확인">
+                        <input type="password" class="form-control" name="userPasswordAgain" id="" aria-describedby="helpId" placeholder="비밀번호 확인">
+                        
+                        <% if(session.getAttribute("errMsg") != null){  %>
+                        <small> <%= session.getAttribute("errMsg") %> </small>
+                        <%}  %>
+                        
+                        
                     </div>
                     
 
-                    <div class="col" style="width:100%;">
+                    
                         <button type="submit" class="btn btn-primary" style="width:100%;">회원가입</button>
-                    </div>
+                    
                 </div>
             </form>
 

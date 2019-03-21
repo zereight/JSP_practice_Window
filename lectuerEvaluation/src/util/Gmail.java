@@ -9,6 +9,6 @@ public class Gmail extends Authenticator{
 		//사용할 구글 계정의 보안탭에서, 보안 수준이 낮은 앱허용하기.
 		
 		AdminInfo temp = new AdminInfo();
-		return new PasswordAuthentication(temp.getEmailId(), temp.getEmailPw());
+		return new PasswordAuthentication(temp.getAdminEmailId(), temp.getAdminEmailPw());
 	}
 }

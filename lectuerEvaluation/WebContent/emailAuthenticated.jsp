@@ -1,5 +1,44 @@
+<%@page import="java.io.PrintWriter"%>
+<%@page import="util.SHA256"%>
+<%@page import="user.userDAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+
+<%
+	request.setCharacterEncoding("UTF-8");
+	
+	String code = request.getParameter("code");
+	
+	userDAO dao  = new userDAO();
+	
+	String userId = null;
+	if(session.getAttribute("userId") != null){
+		userId = (String) session.getAttribute("userId");
+	}
+	
+	String userEmail = dao.getUserEmail(userId);
+	
+	if( SHA256.getSHA256(userEmail).equals( code ) ) {
+		dao.setUserEmailChecked(userId);
+		
+		PrintWriter s = response.getWriter();
+		s.println("<script>");
+		s.println("alert('인증에 성공하였습니다.');");
+		s.println("location.href='./index.jsp' ");
+		s.println("</script>");
+		s.close();
+		
+	} else {
+		PrintWriter s = response.getWriter();
+		s.println("<script>");
+		s.println("alert('인증에 실패하였습니다. 다시확인해 주세요.');");
+		s.println("location.href='./index.jsp' ");
+		s.println("</script>");
+		s.close();
+	}
+
+%>
+
 
 <!doctype html>
 <html style="height:100%;">

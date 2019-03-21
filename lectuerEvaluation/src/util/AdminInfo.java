@@ -1,21 +1,16 @@
 package util;
 
 public class AdminInfo {
-	private String emailId = "qweqwe@gmail.com";
-	private String emailPw = "qweqwe";
+	private String emailId = "duaxka8@gmail.com";
+	private String emailPw = "rptdoa11";
 	
-	public String getEmailId() {
+	public String getAdminEmailId() {
 		return emailId;
 	}
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
-	}
-	public String getEmailPw() {
+	public String getAdminEmailPw() {
 		return emailPw;
 	}
-	public void setEmailPw(String emailPw) {
-		this.emailPw = emailPw;
-	}
+	
 	
 	
 }

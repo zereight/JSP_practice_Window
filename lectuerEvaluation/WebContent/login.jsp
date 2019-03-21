@@ -35,9 +35,9 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">회원정보</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="#">로그인</a>
-                        <a class="dropdown-item" href="#">회원가입</a>
-                        <a class="dropdown-item" href="#">로그아웃</a>
+                        <a class="dropdown-item" href="./login.jsp">로그인</a>
+                        <a class="dropdown-item" href="./userRegister.jsp">회원가입</a>
+                        <a class="dropdown-item" href="./logout.jsp">로그아웃</a>
                     </div>
                 </li>
             </ul>
@@ -163,9 +163,9 @@
                                         <select class="form-control" name="" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
-                                            <option valiue="C">C</option>
-                                            <option valiue="D">D</option>
-                                            <option valiue="F">F</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="F">F</option>
                                         </select>
                                     </div>
                                 </div>
@@ -176,9 +176,9 @@
                                         <select class="form-control" name="" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
-                                            <option valiue="C">C</option>
-                                            <option valiue="D">D</option>
-                                            <option valiue="F">F</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="F">F</option>
                                         </select>
                                     </div>
                                 </div>
@@ -189,9 +189,9 @@
                                         <select class="form-control" name="" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
-                                            <option valiue="C">C</option>
-                                            <option valiue="D">D</option>
-                                            <option valiue="F">F</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="F">F</option>
                                         </select>
                                     </div>
                                 </div>
@@ -202,9 +202,9 @@
                                         <select class="form-control" name="" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
-                                            <option valiue="C">C</option>
-                                            <option valiue="D">D</option>
-                                            <option valiue="F">F</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="F">F</option>
                                         </select>
                                     </div>
                                 </div>
@@ -270,7 +270,7 @@
 
         <div class="container-fluid p-5 border-primary bg-light mt-5" style="border-radius: 5%;">
 
-            <form action="" method="post">
+            <form action="./loginAction.jsp" method="post">
                 <div class="row flex-column ">
                     <div class="col-auto text-center ">로그인 하기</div>
  
@@ -280,7 +280,7 @@
 
                     <div class="col form-group">
 
-                            <input type="text" class="form-control" name="userPassword" id="" aria-describedby="helpId" placeholder="비밀번호">
+                            <input type="password" class="form-control" name="userPassword" id="" aria-describedby="helpId" placeholder="비밀번호">
                     </div>
                     <div class="col" style="width:100%;">
                         <button type="submit" class="btn btn-primary" style="width:100%;">로그인</button>

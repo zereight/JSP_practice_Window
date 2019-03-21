@@ -28,15 +28,15 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">메인 <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="./index.jsp">메인 <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">회원정보</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="./login.jsp">로그인</a>
-                        <a class="dropdown-item" href="#">회원가입</a>
-                        <a class="dropdown-item" href="#">로그아웃</a>
+                        <a class="dropdown-item" href="./userRegister.jsp">회원가입</a>
+                        <a class="dropdown-item" href="./logout.jsp">로그아웃</a>
                     </div>
                 </li>
             </ul>
