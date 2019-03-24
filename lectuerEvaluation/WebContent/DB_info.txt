@@ -33,5 +33,25 @@ mysql> create table USER (
     -> );
     
     
+mysql> create table EVALUATION(
+    -> evaluationId varchar(20),
+    -> userId varchar(20),
+    -> lectureName varchar(30),
+    -> professorName varchar(20),
+    -> lectureYear int,
+    -> semesterDivide varchar(20),
+    -> lectureDivide varchar(20),
+    -> evaluationTitle varchar(30),
+    -> evaluationContent varchar(60),
+    -> totalScore varchar(10),
+    -> creditScroe varchar(10),
+    -> comfortableScore varchar(10),
+    -> lectureScore varchar(10),
+    -> likeCount int
+    -> );
+    
+mysql> alter table evaluation modify evaluationId int primary key;
+mysql> alter table evaluation modify evaluationId int auto_increment;
+
 
 

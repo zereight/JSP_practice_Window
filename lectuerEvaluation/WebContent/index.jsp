@@ -80,7 +80,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -91,19 +91,19 @@
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <form action="post" action="">
+                        <form method="post" action="./evaluationRegisterAction.jsp">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
                                         <label>강좌명</label>
-                                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                                        <input type="text" class="form-control" name="lectureName" id="" aria-describedby="helpId"
                                             placeholder="강좌명을 입력하세요">
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
                                         <label>교수명</label>
-                                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                                        <input type="text" class="form-control" name="professorName" id="" aria-describedby="helpId"
                                             placeholder="교수명을 입력하세요">
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>수강년도</label>
-                                        <select class="form-control form-control-sm" name="" id="">
+                                        <select class="form-control form-control-sm" name="lectureYear" id="">
                                             <option value="2011">2011</option>
                                             <option value="2012">2012</option>
                                             <option value="2013">2013</option>
@@ -121,14 +121,14 @@
                                             <option value="2016">2016</option>
                                             <option value="2017">2017</option>
                                             <option value="2018">2018</option>
-                                            <option value="2019">2019</option>
+                                            <option value="2019" selected>2019</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>수강학기</label>
-                                        <select class="form-control form-control-sm" name="" id="">
+                                        <select class="form-control form-control-sm" name="semesterDivide" id="">
                                             <option value="1학기">1학기</option>
                                             <option value="여름학기">여름학기</option>
                                             <option value="2학기">2학기</option>
@@ -139,7 +139,7 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>강의구분</label>
-                                        <select class="form-control form-control-sm" name="" id="">
+                                        <select class="form-control form-control-sm" name="lectureDivide" id="">
                                             <option selected value="전공">전공</option>
                                             <option value="교양">교양</option>
                                             <option value="기타">기타</option>
@@ -147,11 +147,18 @@
                                     </div>
                                 </div>
                             </div>
-
+                            
+							<div class="row">
+                                <div class="form-group col">
+                                    <label>제목</label>
+                                    <input type="text" class="form-control" name="evaluationTitle" id="">
+                                </div>
+                            </div>
+                            
                             <div class="row">
                                 <div class="form-group col">
                                     <label>내용</label>
-                                    <textarea class="form-control" name="" id="" rows="3" style="height:180px;"></textarea>
+                                    <textarea class="form-control" name="evaluationContent" id="" rows="3" style="height:180px;"></textarea>
                                 </div>
                             </div>
 
@@ -159,12 +166,12 @@
                                 <div class="col-3">
                                     <div class="form-group">
                                         <label>종합</label>
-                                        <select class="form-control" name="" id="">
+                                        <select class="form-control" name="totalScore" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
-                                            <option valiue="C">C</option>
-                                            <option valiue="D">D</option>
-                                            <option valiue="F">F</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="F">F</option>
                                         </select>
                                     </div>
                                 </div>
@@ -172,12 +179,12 @@
                                 <div class="col-3">
                                     <div class="form-group">
                                         <label>성적</label>
-                                        <select class="form-control" name="" id="">
+                                        <select class="form-control" name="creditScore" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
-                                            <option valiue="C">C</option>
-                                            <option valiue="D">D</option>
-                                            <option valiue="F">F</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="F">F</option>
                                         </select>
                                     </div>
                                 </div>
@@ -185,12 +192,12 @@
                                 <div class="col-3">
                                     <div class="form-group">
                                         <label>프리한정도</label>
-                                        <select class="form-control" name="" id="">
+                                        <select class="form-control" name="comfortableScore" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
-                                            <option valiue="C">C</option>
-                                            <option valiue="D">D</option>
-                                            <option valiue="F">F</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="F">F</option>
                                         </select>
                                     </div>
                                 </div>
@@ -198,12 +205,12 @@
                                 <div class="col-3">
                                     <div class="form-group">
                                         <label>강의</label>
-                                        <select class="form-control" name="" id="">
+                                        <select class="form-control" name="lectureScore" id="">
                                             <option value="A">A</option>
                                             <option value="B">B</option>
-                                            <option valiue="C">C</option>
-                                            <option valiue="D">D</option>
-                                            <option valiue="F">F</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
+                                            <option value="F">F</option>
                                         </select>
                                     </div>
                                 </div>
@@ -221,7 +228,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
