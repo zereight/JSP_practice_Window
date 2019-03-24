@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!doctype html>
@@ -239,13 +240,13 @@
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <form action="" method="post">
+                        <form action="./reportAction.jsp" method="post">
 
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
                                         <label>제목</label>
-                                        <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                                        <input type="text" class="form-control" name="reportTitle" id="" aria-describedby="helpId"
                                             placeholder="">
                                     </div>
                                 </div>
@@ -254,7 +255,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label>내용</label>
-                                        <textarea class="form-control" name="" id="" rows="3" style="height:180px;"></textarea>
+                                        <textarea class="form-control" name="reportContent" id="" rows="3" style="height:180px;"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -313,7 +314,9 @@
         </div>
 
     </div>
-
+<%
+	
+%>
     <footer class="footer text-center bg-dark" style="color: white;">
         <div class="container">
             <div class="row justify-content-between align-content-center " style="height:200px;">
