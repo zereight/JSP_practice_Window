@@ -10,7 +10,7 @@ public class EvaluationDTO {
 	private String lectureDivide;
 	private String evaluationTitle;
 	private String evaluationContent;
-	private String totlaScore;
+	private String totalScore;
 	private String creditScore;
 	private String comfortableScore;
 	private String lectureScore;
@@ -69,11 +69,11 @@ public class EvaluationDTO {
 	public void setEvaluationContent(String evaluationContent) {
 		this.evaluationContent = evaluationContent;
 	}
-	public String getTotlaScore() {
-		return totlaScore;
+	public String gettotalScore() {
+		return totalScore;
 	}
-	public void setTotlaScore(String totlaScore) {
-		this.totlaScore = totlaScore;
+	public void settotalScore(String totalScore) {
+		this.totalScore = totalScore;
 	}
 	public String getCreditScore() {
 		return creditScore;
@@ -101,7 +101,7 @@ public class EvaluationDTO {
 	}
 	public EvaluationDTO(int evaluationId, String userId, String lectureName, String professorName, int lectureYear,
 			String semesterDivide, String lectureDivide, String evaluationTitle, String evaluationContent,
-			String totlaScore, String creditScore, String comfortableScore, String lectureScore, int likeCount) {
+			String totalScore, String creditScore, String comfortableScore, String lectureScore, int likeCount) {
 		super();
 		this.evaluationId = evaluationId;
 		this.userId = userId;
@@ -112,7 +112,7 @@ public class EvaluationDTO {
 		this.lectureDivide = lectureDivide;
 		this.evaluationTitle = evaluationTitle;
 		this.evaluationContent = evaluationContent;
-		this.totlaScore = totlaScore;
+		this.totalScore = totalScore;
 		this.creditScore = creditScore;
 		this.comfortableScore = comfortableScore;
 		this.lectureScore = lectureScore;

@@ -1,3 +1,4 @@
+<%@page import="user.userDAO"%>
 <%@page import="evaluation.EvaluationDAO"%>
 <%@page import="evaluation.EvaluationDTO"%>
 <%@page import="java.io.PrintWriter"%>
@@ -21,7 +22,20 @@
 		s.println("</script>");
 		s.close();
 	}
-
+	
+	boolean emailchecked = new userDAO().getUserEmailChecked(userId);
+	
+	if(emailchecked == false){
+		PrintWriter p = response.getWriter();
+		p.println("<script>");
+		p.println("alert('이메일 인증 후에 게시글 등록이 가능합니다.');");
+		p.println("location.href='./emailSent.jsp'");
+		p.println("</script>");
+		p.close();
+		return;
+	}
+	
+	
  String lectureName=null;
  String professorName=null;
  int lectureYear=0;

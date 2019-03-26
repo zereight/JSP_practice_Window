@@ -1,4 +1,11 @@
 
+<%@page import="java.net.URLEncoder"%>
+<%@page import="evaluation.EvaluationDAO"%>
+<%@page import="evaluation.EvaluationDTO"%>
+<%@page import="user.userDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="user.userDAO"%>
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!doctype html>
@@ -19,6 +26,47 @@
 
 <body>
 
+<%
+	request.setCharacterEncoding("UTF-8");
+	String lectureDivide = "전체";
+	String searchType = "최신순";
+	String search = "";
+	int pageNumber = 0;
+	
+	if(request.getParameter("lectureDivide") !=null){
+		lectureDivide = request.getParameter("lectureDivide");
+	}
+	if(request.getParameter("searchType") !=null){
+		searchType = request.getParameter("searchType");
+	}
+	if(request.getParameter("search") !=null){
+		search = request.getParameter("search");
+	}
+	if( request.getParameter("pageNumber") != null ){
+		try{
+			
+			pageNumber = Integer.parseInt( request.getParameter("pageNumber") );
+			
+		}catch(Exception e) {
+			PrintWriter p = response.getWriter();
+			p.println("<script>");
+			p.println("alert('검색 페이지번호 오류입니다.');");
+			p.println("</script>");
+			p.close();
+		}
+	}
+	
+	
+	String userId= null;
+	
+	if (session.getAttribute("userId") != null){
+		userId = (String) session.getAttribute("userId");
+	}
+	
+	
+	
+%>
+
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light ">
         <a class="navbar-brand" href="./index.jsp">강의평가 웹 사이트</a>
@@ -35,9 +83,12 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">회원정보</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
+<% if(userId == null){ %>
                         <a class="dropdown-item" href="./login.jsp">로그인</a>
                         <a class="dropdown-item" href="./userRegister.jsp">회원가입</a>
+<%} else {%>
                         <a class="dropdown-item" href="./logout.jsp">로그아웃</a>
+<% } %>
                     </div>
                 </li>
             </ul>
@@ -272,51 +323,102 @@
         </div>
     </div>
 
+<%
 
-    <div class="container" style="height: 550px;">
+	ArrayList<EvaluationDTO> evaluationList = new ArrayList<EvaluationDTO>();
+	
+	evaluationList = new EvaluationDAO().getList(lectureDivide, searchType, search, pageNumber);
+	
+	if( evaluationList != null ){
+		for (int i=0 ; i< evaluationList.size(); ++i){
+			if(i==5) {break;}
+			
+			EvaluationDTO evaluation = evaluationList.get(i);
+	
+
+%>
+    <div class="container" style="height: 250px;">
         <div class="card my-2">
             <div class="card-body">
-                <h4 class="card-title">제목1</h4>
-                <small>교수명: <span>김대현</span></small>
+                <h4 class="card-title"> <%= evaluation.getLectureName() %>> </h4>
+                <small>교수명: <%= evaluation.getProfessorName() %>><span> <%= userId %>> </span></small>
                 <hr>
-                <p class="card-text py-2">내용1</p>
+                <h5 class="card-title">
+		            <%=evaluation.getEvaluationTitle()%>&nbsp;<small>(<%=evaluation.getLectureYear()%>년 <%=evaluation.getSemesterDivide()%>)</small>
+		        </h5>
+                <p class="card-text py-2"> <%= evaluation.getEvaluationContent() %> </p>
                 <div class="row">
-                    <div class="col-9">
-                        종합: <span>D</span>
-                        성적: <span>A</span>
-                        프리한정도: <span>B</span>
-                        강의: <span>C</span>
-                    </div>
-                    <div class="col-3 text-right">
-                        좋아요: <span>(1)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card  my-2">
-            <div class="card-body">
-                <h4 class="card-title">제목2</h4>
-                <small>교수명: <span>AI</span></small>
-                <hr>
-                <p class="card-text py-2">내용2</p>
-                <div class="row">
-                    <div class="col-9">
-                        종합: <span>D</span>
-                        성적: <span>A</span>
-                        프리한정도: <span>B</span>
-                        강의: <span>C</span>
-                    </div>
-                    <div class="col-3 text-right">
-                        좋아요: <span>(1)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+	                    <div class="col-6">
+				                        종합: <span><%= evaluation.gettotalScore() %></span>
+				                        성적: <span><%= evaluation.getCreditScore() %></span>
+				                        프리한정도: <span><%= evaluation.getcomfortableScore() %></span>
+				                        강의: <span><%= evaluation.getLectureScore() %></span>
+	                    </div>
+	                    <div class="col-3 text-right">
+			                	 좋아요: <span>(<%= evaluation.getLikeCount() %>)</span>
+	                   </div>
+	                   <div class="col-3 text-right">
 
-    </div>
+			              <a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?evaluationID=<%=evaluation.getEvaluationId()%>">추천</a>
+			
+			              <a onclick="return confirm('삭제하시겠습니까?')" href="./deleteAction.jsp?evaluationID=<%=evaluation.getEvaluationId()%>">삭제</a>
+			
+			            </div>
+                </div>
+            </div>
+        </div>
+      </div>
 <%
+		}
 	
 %>
+
+
+<ul class="pagination justify-content-center mt-3">
+
+      <li class="page-item">
+
+<%
+	if(pageNumber <= 0) {
+%>     
+
+        <a class="page-link disabled">이전</a>
+
+<%
+	} else {
+%>
+
+		<a class="page-link" href="./index.jsp?lectureDivide=<%=URLEncoder.encode(lectureDivide, "UTF-8")%>&searchType=<%=URLEncoder.encode(searchType, "UTF-8")%>&search=<%=URLEncoder.encode(search, "UTF-8")%>&pageNumber=<%=pageNumber - 1%>">이전</a>
+
+<%
+	}
+%>
+
+      </li>
+
+      <li class="page-item">
+
+<%
+	if(evaluationList.size() < 6) {
+%>     
+
+        <a class="page-link disabled">다음</a>
+
+<%
+	} else {
+%>
+
+		<a class="page-link" href="./index.jsp?lectureDivide=<%=URLEncoder.encode(lectureDivide, "UTF-8")%>&searchType=<%=URLEncoder.encode(searchType, "UTF-8")%>&search=<%=URLEncoder.encode(search, "UTF-8")%>&pageNumber=<%=pageNumber + 1%>">다음</a>
+
+<%
+	}
+	}
+%>
+
+      </li>
+
+    </ul>
+
     <footer class="footer text-center bg-dark" style="color: white;">
         <div class="container">
             <div class="row justify-content-between align-content-center " style="height:200px;">
