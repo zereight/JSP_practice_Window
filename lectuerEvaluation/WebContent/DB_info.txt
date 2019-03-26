@@ -53,5 +53,10 @@ mysql> create table EVALUATION(
 mysql> alter table evaluation modify evaluationId int primary key;
 mysql> alter table evaluation modify evaluationId int auto_increment;
 
+mysql> create table likey(
+    -> userId varchar(50),
+    -> evaluationId int,
+    -> userIp varchar(20)
+    -> );
 
 

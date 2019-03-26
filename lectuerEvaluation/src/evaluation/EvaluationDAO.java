@@ -105,6 +105,115 @@ public class EvaluationDAO {
 		
 	}
 	
+	public int like(String evaluationId) {
+		PreparedStatement p = null;
+		Connection conn = null;
+		
+		String sql = "UPDATE EVALUATION SET likeCount = likeCount + 1 WHERE evaluationId = ?";
+		
+		try {
+			
+			conn = DatabaseUtil.getConnection();
+			p = conn.prepareStatement(sql);
+			p.setString(1, evaluationId);
+			
+			return p.executeUpdate();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try{if(conn!=null ) {conn.close();}}catch (Exception e){e.printStackTrace();}
+			try{if(p!=null ) {p.close();}}catch (Exception e){e.printStackTrace();}
+		}
+		
+		return -1;
+		
+	}
 	
 	
+	public int delete(String evaluationId) {
+
+		PreparedStatement pstmt = null;
+		Connection conn = null;
+		try {
+			conn = DatabaseUtil.getConnection();
+			String SQL = "DELETE FROM EVALUATION WHERE evaluationId = ?";
+
+			pstmt = conn.prepareStatement(SQL);
+
+			pstmt.setInt(1, Integer.parseInt(evaluationId));
+
+			return pstmt.executeUpdate();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		} finally {
+
+			try {
+
+				if (pstmt != null)
+					pstmt.close();
+
+				if (conn != null)
+					conn.close();
+
+			} catch (Exception e) {
+
+				e.printStackTrace();
+
+			}
+
+		}
+
+		return -1;
+
+	}
+	public String getUserID(String evaluationID) {
+		Connection conn = null;
+		ResultSet rs = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = DatabaseUtil.getConnection();
+			String SQL = "SELECT userID FROM EVALUATION WHERE evaluationID = ?";
+
+			pstmt = conn.prepareStatement(SQL);
+
+			pstmt.setInt(1, Integer.parseInt(evaluationID));
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				return rs.getString(1);
+
+			}
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		} finally {
+
+			try {
+
+				if (pstmt != null)
+					pstmt.close();
+
+				if (conn != null)
+					conn.close();
+
+			} catch (Exception e) {
+
+				e.printStackTrace();
+
+			}
+
+		}
+
+		return null;
+
+	}
 }

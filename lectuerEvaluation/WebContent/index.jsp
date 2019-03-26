@@ -374,7 +374,7 @@
 %>
 
 
-<ul class="pagination justify-content-center mt-3">
+	<ul class="pagination justify-content-center mt-3">
 
       <li class="page-item">
 
